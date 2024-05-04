@@ -1,10 +1,12 @@
-extends TileMap
+extends Node
+
+var coins := 0
+var score := 0
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# Deixa os blocos colocados no layer 3 invisiveis
-	set_layer_modulate(3, 0)
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

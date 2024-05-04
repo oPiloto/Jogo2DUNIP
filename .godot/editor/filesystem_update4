@@ -1,5 +1,8 @@
 res://Levels/word_01.tscn
-res://Scripts/GameManager.gd
+res://Scripts/hud_manager.gd
+res://Scripts/globals.gd
 res://prefabs/coin.tscn
-res://Scripts/coins.gd
 res://Actors/player.tscn
+res://Scripts/coins.gd
+res://Scripts/level.gd
+res://Scripts/kill_zone.gd

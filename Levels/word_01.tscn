@@ -1,7 +1,6 @@
 [gd_scene load_steps=42 format=3 uid="uid://bqb5oxcw1wmgm"]
 
 [ext_resource type="Texture2D" uid="uid://baqv2fodmectp" path="res://Assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_6ctrr"]
-[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_wcv5q"]
 [ext_resource type="Texture2D" uid="uid://rydsvigfl14t" path="res://Assets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="2_hlpsw"]
 [ext_resource type="Texture2D" uid="uid://bfoqqxh1e3b0w" path="res://Assets/Seasonal Tilesets/1 - Grassland/Extra_plants (16 x 16).png" id="3_ryrfn"]
 [ext_resource type="PackedScene" uid="uid://bqntwc4ew37hl" path="res://Actors/player.tscn" id="4_ajnf4"]
@@ -20,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://4uu0y4mbsr1g" path="res://Actors/kill_zone.tscn" id="17_8pxlf"]
 [ext_resource type="PackedScene" uid="uid://ftu3e2pa2x57" path="res://prefabs/coin.tscn" id="19_rr16o"]
 [ext_resource type="Texture2D" uid="uid://rxmmtu8jvrqp" path="res://Assets/Mini FX, Items & UI/Common Pick-ups/coins/Sprite-0001.png" id="20_lfip0"]
+[ext_resource type="Script" path="res://Scripts/hud_manager.gd" id="20_t7dra"]
 [ext_resource type="Texture2D" uid="uid://cq6xtshiwj8j1" path="res://Assets/Mini FX, Items & UI/Common Pick-ups/coins/Sprite-0002.png" id="21_tqyro"]
 [ext_resource type="Texture2D" uid="uid://q4mijjmsbi18" path="res://Assets/Mini FX, Items & UI/Common Pick-ups/coins/Sprite-0003.png" id="22_8epoy"]
 [ext_resource type="Texture2D" uid="uid://2nnl02wqajjd" path="res://Assets/Mini FX, Items & UI/Common Pick-ups/coins/Sprite-0004.png" id="23_4vhj7"]
@@ -524,10 +524,6 @@ frame_3/duration = 1.0
 
 [node name="Word-01" type="Node2D"]
 
-[node name="GameManager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("1_wcv5q")
-
 [node name="level" type="TileMap" parent="."]
 position = Vector2(0, -1)
 tile_set = SubResource("TileSet_muv68")
@@ -612,15 +608,23 @@ position = Vector2(1341, 287)
 [node name="Enemy2" parent="Enemy" instance=ExtResource("14_vajdo")]
 position = Vector2(1288, 287)
 
+[node name="Coins" type="Node" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("19_rr16o")]
+position = Vector2(174, 168)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("19_rr16o")]
+position = Vector2(158, 230)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("19_rr16o")]
+position = Vector2(231, 179)
+
 [node name="kill_zone" parent="." instance=ExtResource("17_8pxlf")]
 position = Vector2(64, 287)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="kill_zone"]
 position = Vector2(-64, 145)
 shape = SubResource("WorldBoundaryShape2D_ky2av")
-
-[node name="Coin" parent="." instance=ExtResource("19_rr16o")]
-position = Vector2(123, 260)
 
 [node name="Enemy2" parent="." instance=ExtResource("14_vajdo")]
 position = Vector2(123, 240)
@@ -634,6 +638,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("20_t7dra")
 
 [node name="MarginContainer" type="MarginContainer" parent="HUD/Control"]
 layout_mode = 1
@@ -662,7 +667,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("24_2jdbb")
 theme_override_font_sizes/font_size = 16
-text = "000"
+text = "0000"
 horizontal_alignment = 1
 vertical_alignment = 1
 
