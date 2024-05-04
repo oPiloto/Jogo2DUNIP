@@ -74,17 +74,19 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uk4mq"]
+radius = 5.0
 
 [node name="Coin" type="Area2D"]
 collision_layer = 8
 script = ExtResource("1_gptft")
 
 [node name="Anim" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2.98023e-08)
+scale = Vector2(0.65, 0.671875)
 sprite_frames = SubResource("SpriteFrames_an17t")
-animation = &"collect"
+animation = &"idle"
 autoplay = "idle"
-frame = 3
-frame_progress = 1.0
+frame_progress = 0.172912
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_uk4mq")

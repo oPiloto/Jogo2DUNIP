@@ -1,0 +1,5 @@
+res://Levels/word_01.tscn
+res://Scripts/GameManager.gd
+res://prefabs/coin.tscn
+res://Scripts/coins.gd
+res://Actors/player.tscn
