@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://4uu0y4mbsr1g"]
+[gd_scene load_steps=2 format=3 uid="uid://dv4siit8bgedv"]
 
 [ext_resource type="Script" path="res://Scripts/kill_zone.gd" id="1_ef6l7"]
 

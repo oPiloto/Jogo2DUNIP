@@ -4,8 +4,10 @@ extends CharacterBody2D
 const SPEED = 700.0
 const JUMP_VELOCITY = -400.0
 
-@onready var wal_detector := $wall_detector as RayCast2D #vamos criar uma referencia para nosso raycast
-@onready var texture := $Texture as Sprite2D
+@onready var wall_detector = $WallDetector
+@onready var texture = $Sprite2D
+@onready var animation = $AnimationPlayer
+
 
 var direction := -1
 
@@ -18,9 +20,9 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
-	if wal_detector.is_colliding():
+	if wall_detector.is_colliding():
 		direction *= -1 #multiplicamos por -1 para que o direction fique positivo e inverta a direção
-		wal_detector.scale.x *= -1 #vamo inverter a posição em x do raycast para que detecte colisões à esquerda também
+		wall_detector.scale.x *= -1 #vamo inverter a posição em x do raycast para que detecte colisões à esquerda também
 	
 	if direction == 1:
 		texture.flip_h = true #para inverter a imagem 
@@ -31,3 +33,8 @@ func _physics_process(delta):
 	velocity.x = direction * SPEED * delta
 
 	move_and_slide()
+
+
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "hurt":
+		queue_free()

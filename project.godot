@@ -51,6 +51,8 @@ move_left={
 2d_physics/layer_2="word"
 2d_physics/layer_3="enemies"
 2d_physics/layer_4="itens"
+2d_physics/layer_5="hit_box"
+2d_physics/layer_6="hurt_box"
 
 [rendering]
 

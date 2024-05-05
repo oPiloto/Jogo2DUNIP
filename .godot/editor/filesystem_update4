@@ -1,8 +1,11 @@
 res://Levels/word_01.tscn
-res://Scripts/hud_manager.gd
-res://Scripts/globals.gd
+res://Scripts/word_01.gd
 res://prefabs/coin.tscn
 res://Actors/player.tscn
-res://Scripts/coins.gd
-res://Scripts/level.gd
-res://Scripts/kill_zone.gd
+res://prefabs/hit_box.tscn
+res://prefabs/kill_zone.tscn
+res://Actors/enemy.tscn
+res://prefabs/falling_platform.tscn
+res://Scripts/globals.gd
+res://Scripts/Player.gd
+res://Scripts/hud_manager.gd
