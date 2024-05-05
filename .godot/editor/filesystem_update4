@@ -5,3 +5,5 @@ res://prefabs/hit_box.tscn
 res://prefabs/kill_zone.tscn
 res://Actors/enemy.tscn
 res://Scripts/Player.gd
+res://prefabs/spikes.tscn
+res://Scripts/Spike.gd

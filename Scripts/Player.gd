@@ -80,7 +80,7 @@ func take_damage(knockback_force := Vector2.ZERO, duration := 0.25):
 	
 	# Toma o dana e depois de .2s volta a animação idle
 	is_hurted = true
-	await get_tree().create_timer(.).timeout
+	await get_tree().create_timer(.4).timeout
 	is_hurted = false
 
 # Gerencia animação
