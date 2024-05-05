@@ -107,7 +107,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 13.0
+"speed": 11.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vkx2g"]

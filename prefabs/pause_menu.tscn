@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5sp3eyyhlkul"]
+
+[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_84qia"]
+[ext_resource type="Theme" uid="uid://bh53fh0b6tlbj" path="res://pause_menu.tres" id="1_jddlu"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_c622j"]
+action = &"ui_cancel"
+
+[sub_resource type="Shortcut" id="Shortcut_6ockm"]
+events = [SubResource("InputEventAction_c622j")]
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_84qia")
+
+[node name="bg" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.0588235)
+
+[node name="MenuHolder" type="VBoxContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -33.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resume" type="Button" parent="MenuHolder"]
+layout_mode = 2
+theme = ExtResource("1_jddlu")
+shortcut = SubResource("Shortcut_6ockm")
+text = "Continuar"
+
+[node name="Quit" type="Button" parent="MenuHolder"]
+layout_mode = 2
+theme = ExtResource("1_jddlu")
+text = "Sair"
+
+[connection signal="pressed" from="MenuHolder/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MenuHolder/Quit" to="." method="_on_quit_pressed"]

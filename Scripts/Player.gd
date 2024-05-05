@@ -10,6 +10,7 @@ var is_jumping := false
 
 var knockback_vector = Vector2.ZERO
 
+@onready var collision_shape_2d = $CollisionShape2D
 @onready var animation := $anim as AnimatedSprite2D # Vamos guardar uma referência para o nó de animação
 @onready var remote_transform_2d = $RemoteTransform2D
 @onready var ray_right = $ray_right
@@ -71,7 +72,7 @@ func take_damage(knockback_force := Vector2.ZERO, duration := 0.25):
 	if Globals.player_life > 0:
 		Globals.player_life -= 1
 	else:
-		queue_free()
+		collision_shape_2d.queue_free()
 		emit_signal("player_has_died")
 	
 	if knockback_force != Vector2.ZERO:
