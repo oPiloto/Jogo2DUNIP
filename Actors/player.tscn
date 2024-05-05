@@ -134,7 +134,7 @@ shape = SubResource("RectangleShape2D_iledg")
 z_index = 1
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_5p1il")
-animation = &"hurt"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="Animator" type="AnimationPlayer" parent="."]

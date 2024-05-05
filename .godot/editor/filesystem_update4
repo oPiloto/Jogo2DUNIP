@@ -1,10 +1,2 @@
 res://Levels/word_01.tscn
-res://prefabs/coin.tscn
 res://Actors/player.tscn
-res://prefabs/hit_box.tscn
-res://prefabs/kill_zone.tscn
-res://Actors/enemy.tscn
-res://Scripts/Player.gd
-res://prefabs/spikes.tscn
-res://Scripts/Spike.gd
-res://Scripts/enemy.gd
