@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://bqntwc4ew37hl"]
+[gd_scene load_steps=21 format=3 uid="uid://bqntwc4ew37hl"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_3x705"]
+[ext_resource type="Texture2D" uid="uid://d3ly758crdgx6" path="res://Assets/Sprite Pack 3/2 - Twiggy/Hurt (32 x 32).png" id="2_6bxuf"]
 [ext_resource type="Texture2D" uid="uid://csg60u4easulj" path="res://Assets/Sprite Pack 3/2 - Twiggy/Idle (32 x 32).png" id="2_ayqsm"]
 [ext_resource type="Texture2D" uid="uid://b5abqtremfk4f" path="res://Assets/Sprite Pack 3/2 - Twiggy/Jumping (32 x 32).png" id="3_tmy5d"]
 [ext_resource type="Texture2D" uid="uid://bofumv3dpbbs6" path="res://Assets/Sprite Pack 3/2 - Twiggy/Running (32 x 32).png" id="4_jae0o"]
@@ -58,6 +59,14 @@ region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5p1il"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6bxuf")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ayjbe")
@@ -125,7 +134,7 @@ shape = SubResource("RectangleShape2D_iledg")
 z_index = 1
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_5p1il")
-animation = &"idle"
+animation = &"hurt"
 autoplay = "idle"
 
 [node name="Animator" type="AnimationPlayer" parent="."]

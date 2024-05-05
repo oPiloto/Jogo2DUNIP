@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bqb5oxcw1wmgm"]
+[gd_scene load_steps=46 format=3 uid="uid://bqb5oxcw1wmgm"]
 
 [ext_resource type="Texture2D" uid="uid://baqv2fodmectp" path="res://Assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_6ctrr"]
 [ext_resource type="Script" path="res://Scripts/word_01.gd" id="1_a3a4j"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://dypsdj3tidt6e" path="res://Assets/Mini FX, Items & UI/Common Pick-ups/Heart.png" id="25_ywcdc"]
 [ext_resource type="PackedScene" uid="uid://cccefhbwa2gdy" path="res://prefabs/falling_platform.tscn" id="27_oacjg"]
 [ext_resource type="PackedScene" uid="uid://c5sp3eyyhlkul" path="res://prefabs/pause_menu.tscn" id="28_velvr"]
+[ext_resource type="PackedScene" uid="uid://bcoxd1st6vyo6" path="res://prefabs/moving_plataform.tscn" id="29_fyoor"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_svtse"]
 tile_data = PackedInt32Array(0, 65537, 1)
@@ -750,5 +751,8 @@ position = Vector2(4479, 303)
 
 [node name="PauseMenu" parent="." instance=ExtResource("28_velvr")]
 visible = false
+
+[node name="Moving_plataform" parent="." instance=ExtResource("29_fyoor")]
+position = Vector2(306, 194)
 
 [connection signal="timeout" from="HUD/Control/ClockTimer" to="HUD/Control" method="_on_clock_timer_timeout"]

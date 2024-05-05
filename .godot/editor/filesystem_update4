@@ -4,8 +4,4 @@ res://Actors/player.tscn
 res://prefabs/hit_box.tscn
 res://prefabs/kill_zone.tscn
 res://Actors/enemy.tscn
-res://prefabs/falling_platform.tscn
 res://Scripts/Player.gd
-res://prefabs/pause_menu.tscn
-res://pause_menu.tres
-res://Scripts/pause_menu.gd

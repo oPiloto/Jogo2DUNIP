@@ -7,8 +7,9 @@ const JUMP_FORCE = -320.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_jumping := false
-
+var is_hurted := false
 var knockback_vector = Vector2.ZERO
+var direction
 
 @onready var collision_shape_2d = $CollisionShape2D
 @onready var animation := $anim as AnimatedSprite2D # Vamos guardar uma referência para o nó de animação
@@ -33,31 +34,25 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("move_left", "move_right")
+	direction = Input.get_axis("move_left", "move_right")
 	
 	# Mudar a direção do sprite
 	if direction != 0:
 		velocity.x = direction * SPEED
 		animation.scale.x = direction # x = 1 direita, x = -1 esquerda. Assim setamos quando o personagem anda para direita ou para esquerda
-		
-		if !is_jumping:
-			animation.play("run")
-		elif is_jumping:
-			animation.play("jump")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		animation.play("idle")
 	
 	if knockback_vector != Vector2.ZERO:
 		velocity = knockback_vector
-	
-	move_and_slide()
 	
 	for platforms in get_slide_collision_count():
 		var colision = get_slide_collision(platforms)
 		if colision.get_collider().has_method("has_collided"):
 			colision.get_collider().has_collided(colision, self)
-
+	
+	_set_state()
+	move_and_slide()
 
 func _on_hurt_box_body_entered(body):
 	if ray_right.is_colliding():
@@ -82,3 +77,23 @@ func take_damage(knockback_force := Vector2.ZERO, duration := 0.25):
 		knockback_tween.parallel().tween_property(self, "knockback_vector", Vector2.ZERO, duration)
 		animation.modulate = Color(1, 0, 0, 1)
 		knockback_tween.parallel().tween_property(animation, "modulate", Color(1, 1, 1, 1), duration)
+	
+	# Toma o dana e depois de .2s volta a animação idle
+	is_hurted = true
+	await get_tree().create_timer(.).timeout
+	is_hurted = false
+
+# Gerencia animação
+func _set_state():
+	var state = "idle"
+	
+	if !is_on_floor():
+		state = "jump"
+	elif direction != 0:
+		state = "run"
+	
+	if is_hurted:
+		state = "hurt"
+	
+	if animation.name != state:
+		animation.play(state)
