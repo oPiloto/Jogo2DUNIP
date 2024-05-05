@@ -1,2 +1,6 @@
 res://Levels/word_01.tscn
 res://Actors/player.tscn
+res://prefabs/coin.tscn
+res://prefabs/hit_box.tscn
+res://prefabs/kill_zone.tscn
+res://Actors/enemy.tscn

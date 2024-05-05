@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://bqb5oxcw1wmgm"]
+[gd_scene load_steps=51 format=3 uid="uid://bqb5oxcw1wmgm"]
 
 [ext_resource type="Texture2D" uid="uid://baqv2fodmectp" path="res://Assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_6ctrr"]
 [ext_resource type="Script" path="res://Scripts/word_01.gd" id="1_a3a4j"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c8a00oowtu82x" path="res://Assets/Seasonal Tilesets/5 - Misc. universal tiles/Invisible.png" id="7_mfpap"]
 [ext_resource type="Script" path="res://Scripts/level.gd" id="7_n8328"]
 [ext_resource type="Texture2D" uid="uid://bofi8ui6yejwv" path="res://Assets/Seasonal Tilesets/1 - Grassland/Background parts/4 - Cloud_cover_2.png" id="9_0n6cw"]
+[ext_resource type="Texture2D" uid="uid://bd6lm58ngpuqg" path="res://Assets/Seasonal Tilesets/5 - Misc. universal tiles/Lava_frames (16 x 32).png" id="9_jbkul"]
 [ext_resource type="Shader" path="res://Shaders/movement_clounds.gdshader" id="10_iqrnu"]
 [ext_resource type="Texture2D" uid="uid://81mr6mydar48" path="res://Assets/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png" id="10_vcg8g"]
 [ext_resource type="Texture2D" uid="uid://4ovi35eb51va" path="res://Assets/Seasonal Tilesets/1 - Grassland/Background parts/2 - Hills.png" id="11_68dh2"]
@@ -494,6 +495,20 @@ texture = ExtResource("7_mfpap")
 0:0/0/physics_layer_0/angular_velocity = 0.0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ianmo"]
+texture = ExtResource("9_jbkul")
+0:0/animation_columns = 4
+0:0/animation_frame_0/duration = 0.3
+0:0/animation_frame_1/duration = 0.3
+0:0/animation_frame_2/duration = 0.3
+0:0/animation_frame_3/duration = 0.3
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+
 [sub_resource type="TileSet" id="TileSet_muv68"]
 physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 0
@@ -504,6 +519,7 @@ sources/3 = SubResource("TileSetAtlasSource_t0qrk")
 sources/5 = SubResource("TileSetAtlasSource_x47qa")
 sources/4 = SubResource("TileSetAtlasSource_wef3d")
 sources/6 = SubResource("TileSetAtlasSource_v616w")
+sources/7 = SubResource("TileSetAtlasSource_ianmo")
 pattern_0 = SubResource("TileMapPattern_svtse")
 pattern_1 = SubResource("TileMapPattern_nl6r4")
 pattern_2 = SubResource("TileMapPattern_tk6rj")
