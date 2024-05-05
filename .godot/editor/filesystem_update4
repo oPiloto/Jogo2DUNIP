@@ -4,3 +4,7 @@ res://prefabs/coin.tscn
 res://prefabs/hit_box.tscn
 res://prefabs/kill_zone.tscn
 res://Actors/enemy.tscn
+res://Actors/base_patrol.tscn
+res://Scripts/hit_box.gd
+res://Scripts/RocketCherry.gd
+res://Scripts/enemy.gd

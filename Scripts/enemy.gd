@@ -4,7 +4,7 @@ extends CharacterBody2D
 const SPEED = 700.0
 const JUMP_VELOCITY = -400.0
 
-const DEATH_SCORE = 20
+@export var enemy_socre = 20
 
 @onready var wall_detector = $WallDetector
 @onready var texture = $Sprite2D
@@ -40,4 +40,4 @@ func _physics_process(delta):
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "hurt":
 		queue_free()
-		Globals.score += DEATH_SCORE
+		Globals.score += enemy_socre
