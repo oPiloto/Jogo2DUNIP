@@ -7,3 +7,4 @@ res://Actors/enemy.tscn
 res://Scripts/Player.gd
 res://prefabs/spikes.tscn
 res://Scripts/Spike.gd
+res://Scripts/enemy.gd

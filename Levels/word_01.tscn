@@ -775,5 +775,11 @@ region_rect = Rect2(0, 4.675, 162, 11.325)
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_ip5nq")
 
+[node name="Enemy2" parent="." instance=ExtResource("25_jl8xx")]
+position = Vector2(3070, 352)
+
+[node name="Enemy3" parent="." instance=ExtResource("25_jl8xx")]
+position = Vector2(3095, 349)
+
 [connection signal="timeout" from="HUD/Control/ClockTimer" to="HUD/Control" method="_on_clock_timer_timeout"]
 [connection signal="body_entered" from="Spike" to="Spike" method="_on_body_entered"]
