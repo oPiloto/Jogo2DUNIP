@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://bqb5oxcw1wmgm"]
+[gd_scene load_steps=58 format=3 uid="uid://bqb5oxcw1wmgm"]
 
 [ext_resource type="Texture2D" uid="uid://baqv2fodmectp" path="res://Assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_6ctrr"]
 [ext_resource type="Script" path="res://Scripts/word_01.gd" id="1_a3a4j"]
@@ -34,6 +34,10 @@
 [ext_resource type="Texture2D" uid="uid://cqmkkjs7h1shi" path="res://Assets/Seasonal Tilesets/5 - Misc. universal tiles/Spikes.png" id="30_qsjwi"]
 [ext_resource type="PackedScene" uid="uid://cfe01kie3qiep" path="res://Actors/base_patrol.tscn" id="33_r7ur3"]
 [ext_resource type="PackedScene" uid="uid://d3e347gysoxp1" path="res://Actors/cherry.tscn" id="34_lioa7"]
+[ext_resource type="PackedScene" uid="uid://dk5bxe4cnl71a" path="res://prefabs/portal.tscn" id="35_g4xly"]
+[ext_resource type="Shader" path="res://Shaders/mudar_mundo.gdshader" id="36_8jl0f"]
+[ext_resource type="Script" path="res://Scripts/MudarMundo.gd" id="36_xrbm1"]
+[ext_resource type="Script" path="res://Scripts/transicao_mundo.gd" id="37_1d0ro"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_svtse"]
 tile_data = PackedInt32Array(0, 65537, 1)
@@ -549,6 +553,18 @@ frame_3/duration = 1.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ip5nq"]
 size = Vector2(20, 11)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dtyca"]
+shader = ExtResource("36_8jl0f")
+shader_parameter/screen_width = 640.0
+shader_parameter/screen_height = 320.0
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/player = Vector2(0.5, 0.5)
+shader_parameter/progress = 0.0
+shader_parameter/pixel_size = 15.0
+shader_parameter/circle_size = 1.5
+shader_parameter/curtains = 1.0
+shader_parameter/type = 0
+
 [node name="Word-01" type="Node2D"]
 script = ExtResource("1_a3a4j")
 
@@ -798,6 +814,22 @@ position = Vector2(205, 209)
 
 [node name="Cherry" parent="." instance=ExtResource("34_lioa7")]
 position = Vector2(164, 224)
+
+[node name="MudarMundo" type="CanvasLayer" parent="."]
+script = ExtResource("36_xrbm1")
+
+[node name="ColorRect" type="ColorRect" parent="MudarMundo"]
+material = SubResource("ShaderMaterial_dtyca")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("37_1d0ro")
+
+[node name="Portal" parent="." instance=ExtResource("35_g4xly")]
+position = Vector2(100, 271)
+next_level = "res://Levels/word_03.tscn"
 
 [connection signal="timeout" from="HUD/Control/ClockTimer" to="HUD/Control" method="_on_clock_timer_timeout"]
 [connection signal="body_entered" from="Spike" to="Spike" method="_on_body_entered"]
