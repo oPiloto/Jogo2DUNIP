@@ -3,12 +3,14 @@
 [ext_resource type="Script" path="res://Scripts/portal.gd" id="1_qf7n6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyfwg"]
+size = Vector2(20, 91)
 
 [node name="Portal" type="Area2D"]
 script = ExtResource("1_qf7n6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 2
+position = Vector2(0, -35.5)
 shape = SubResource("RectangleShape2D_jyfwg")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
