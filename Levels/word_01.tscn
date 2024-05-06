@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://bqb5oxcw1wmgm"]
+[gd_scene load_steps=53 format=3 uid="uid://bqb5oxcw1wmgm"]
 
 [ext_resource type="Texture2D" uid="uid://baqv2fodmectp" path="res://Assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_6ctrr"]
 [ext_resource type="Script" path="res://Scripts/word_01.gd" id="1_a3a4j"]
@@ -33,6 +33,7 @@
 [ext_resource type="Script" path="res://Scripts/Spike.gd" id="30_3c7ey"]
 [ext_resource type="Texture2D" uid="uid://cqmkkjs7h1shi" path="res://Assets/Seasonal Tilesets/5 - Misc. universal tiles/Spikes.png" id="30_qsjwi"]
 [ext_resource type="PackedScene" uid="uid://cfe01kie3qiep" path="res://Actors/base_patrol.tscn" id="33_r7ur3"]
+[ext_resource type="PackedScene" uid="uid://d3e347gysoxp1" path="res://Actors/cherry.tscn" id="34_lioa7"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_svtse"]
 tile_data = PackedInt32Array(0, 65537, 1)
@@ -794,6 +795,9 @@ shape = SubResource("RectangleShape2D_ip5nq")
 
 [node name="BasePatrol" parent="." instance=ExtResource("33_r7ur3")]
 position = Vector2(205, 209)
+
+[node name="Cherry" parent="." instance=ExtResource("34_lioa7")]
+position = Vector2(164, 224)
 
 [connection signal="timeout" from="HUD/Control/ClockTimer" to="HUD/Control" method="_on_clock_timer_timeout"]
 [connection signal="body_entered" from="Spike" to="Spike" method="_on_body_entered"]

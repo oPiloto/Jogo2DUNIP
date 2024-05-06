@@ -120,7 +120,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vkx2g"]
-size = Vector2(17, 18)
+size = Vector2(17, 19)
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 22
@@ -144,7 +144,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurt_box"]
-position = Vector2(0, -12)
+position = Vector2(0, -12.5)
 shape = SubResource("RectangleShape2D_vkx2g")
 debug_color = Color(0.925491, 0.155943, 0.557658, 0.42)
 

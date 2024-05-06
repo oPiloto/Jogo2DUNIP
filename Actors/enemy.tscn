@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://dsticdoq2xjol"]
 
-[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_8u1ru"]
 [ext_resource type="Texture2D" uid="uid://c6uufud86s5y6" path="res://Assets/Sprite Pack 2/4 - Robo Pumpkin/Walking (16 x 16).png" id="1_am5a3"]
+[ext_resource type="Script" path="res://Scripts/ground_enemy.gd" id="1_f2gac"]
 [ext_resource type="Texture2D" uid="uid://bu71fmsxgbejg" path="res://Assets/Sprite Pack 2/4 - Robo Pumpkin/Hurt (16 x 16).png" id="2_0ptvn"]
 [ext_resource type="Texture2D" uid="uid://caku0fsofrbty" path="res://Assets/Sprite Pack 2/4 - Robo Pumpkin/Standing (16 x 16).png" id="3_dbxcp"]
 [ext_resource type="PackedScene" uid="uid://kk1756ff1pjw" path="res://prefabs/hit_box.tscn" id="5_8q20s"]
@@ -185,14 +185,14 @@ size = Vector2(10, 1)
 [node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 4
 collision_mask = 2
-script = ExtResource("1_8u1ru")
+script = ExtResource("1_f2gac")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -8)
 texture = ExtResource("1_am5a3")
 hframes = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="animation" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_dt88u")
 }
@@ -215,4 +215,4 @@ collision_mask = 2
 position = Vector2(0, -10.5)
 shape = SubResource("RectangleShape2D_dbkyc")
 
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="body_entered" from="hit_box" to="." method="_on_hit_box_body_entered"]

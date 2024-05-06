@@ -8,3 +8,7 @@ res://Actors/base_patrol.tscn
 res://Scripts/hit_box.gd
 res://Scripts/RocketCherry.gd
 res://Scripts/enemy.gd
+res://Scripts/ground_enemy.gd
+res://Actors/cherry.tscn
+res://Scripts/cherry.gd
+res://Scripts/globals.gd

@@ -1,12 +1,9 @@
-extends CharacterBody2D
+extends EnemyBase
 
-@export var enemy_socre = 100
-@onready var animation = $animation
+@onready var spawn = $"../Spawn"
 
-func _on_hit_box_body_entered(body):
-	animation.play("hurt")
-
-func _on_animation_animation_finished():
-	if animation.animation == "hurt":
-		queue_free()
-		Globals.score += enemy_socre
+func _ready():
+	spawn_instance = preload("res://Actors/cherry.tscn")
+	spawn_instance_pos = spawn
+	can_spawn = true
+	animation.animation_finished.connect(kill_air_enemy)

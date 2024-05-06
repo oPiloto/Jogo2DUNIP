@@ -8,7 +8,6 @@ var current_checkpoint = null
 
 var player = null
 
-
 func respawn_player():
 	if current_checkpoint != null:
 		player.possition = current_checkpoint.global_position

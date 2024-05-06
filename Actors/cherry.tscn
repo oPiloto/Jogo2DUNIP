@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://d3e347gysoxp1"]
+
+[ext_resource type="Script" path="res://Scripts/cherry.gd" id="1_dphqj"]
+[ext_resource type="Texture2D" uid="uid://ddh1ynxchel2h" path="res://Assets/Sprite Pack 2/7 - Rocket Cherry/Hopping (16 x 32).png" id="1_w6iag"]
+[ext_resource type="Texture2D" uid="uid://cl173r2akv6cd" path="res://Assets/Sprite Pack 2/7 - Rocket Cherry/Hurt (16 x 32).png" id="2_teh2t"]
+[ext_resource type="PackedScene" uid="uid://kk1756ff1pjw" path="res://prefabs/hit_box.tscn" id="3_rd4yw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ya5gc"]
+size = Vector2(14, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2ia3"]
+atlas = ExtResource("1_w6iag")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdvi1"]
+atlas = ExtResource("1_w6iag")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyskn"]
+atlas = ExtResource("2_teh2t")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7mfjr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2ia3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdvi1")
+}],
+"loop": true,
+"name": &"hopping",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uyskn")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gjvqo"]
+size = Vector2(12, 2)
+
+[node name="Cherry" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 3
+safe_margin = 0.001
+script = ExtResource("1_dphqj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_ya5gc")
+
+[node name="animation" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_7mfjr")
+animation = &"hurt"
+autoplay = "hopping"
+
+[node name="hit_box" parent="." instance=ExtResource("3_rd4yw")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_box"]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_gjvqo")
+debug_color = Color(0.755636, 0.401357, 0.572881, 0.42)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

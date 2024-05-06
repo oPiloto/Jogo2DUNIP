@@ -1,11 +1,11 @@
-CollisionShape2D
 AnimationPlayer
+CollisionShape2D
+AnimatedSprite2D
+CharacterBody2D
 Marker2D
 RemoteTransform2D
 PathFollow2D
 Path2D
-AnimatedSprite2D
-CharacterBody2D
 Sprite2D
 Area2D
 ColorRect
