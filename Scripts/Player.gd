@@ -9,6 +9,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_jumping := false
 var is_hurted := false
 var knockback_vector = Vector2.ZERO
+var knockback_power = 15
 var direction
 
 @onready var collision_shape_2d = $CollisionShape2D
@@ -55,10 +56,8 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _on_hurt_box_body_entered(body):
-	if ray_right.is_colliding():
-		take_damage(Vector2(-150, -150))
-	elif ray_left.is_colliding():
-		take_damage(Vector2(150, -150))
+	var knockback = Vector2((global_position.x - body.global_position.x) * knockback_power, -150)
+	take_damage(knockback)
 
 func follow_camera(camera):
 	remote_transform_2d.remote_path = camera.get_path()

@@ -1,0 +1,15 @@
+res://Actors/base_patrol.tscn::3dffbff1374fd50e040f0093b63f1c3b::1714984796::res://.godot/exported/133200997/export-aa57cb02b4af407505060867f21fa7e1-base_patrol.scn
+res://Actors/cherry.tscn::bf7710ff5bd238a6095548d59dc85169::1714984796::res://.godot/exported/133200997/export-fecb41ea6d531886bced8130f2ed0e26-cherry.scn
+res://Actors/enemy.tscn::748c2748693beb1e4a98cd09e83b31fe::1714984796::res://.godot/exported/133200997/export-57a9b20cc440026d62454a548a363f59-enemy.scn
+res://Actors/player.tscn::21462cd12b8056015e1dfe01296d5ef8::1714984796::res://.godot/exported/133200997/export-33c4e5bc2f66bfcd59d450d3231cbdb8-player.scn
+res://Levels/word_01.tscn::e8f49cbb747abc59d3cfa84661ba432f::1714984796::res://.godot/exported/133200997/export-90ffcfc3492a37a9b1177dc74a3f4c1c-word_01.scn
+res://Levels/word_02.tscn::429f8e135b1e00d395175ff6a1742043::1714962854::res://.godot/exported/133200997/export-bccbe38f0db701fd0ee3e2d84e37916a-word_02.scn
+res://Levels/word_03.tscn::5d9ccc1699b0b36ccd9ac860f71c8bf8::1714984796::res://.godot/exported/133200997/export-688a013ad05c00904b9e91ce4a0df78e-word_03.scn
+res://prefabs/coin.tscn::1e80e1796ea124586aa07a8fc9b81a44::1714984796::res://.godot/exported/133200997/export-39bbc9b86d6ff472dbd608d74c2b3efc-coin.scn
+res://prefabs/falling_platform.tscn::0c84a5d7edd8a048ef51ee7fc27c4d66::1714960330::res://.godot/exported/133200997/export-ed611ab095895c21c38dd5bf5ce80c05-falling_platform.scn
+res://prefabs/hit_box.tscn::df3a5068f17a7e8f19ef35b822ee0991::1714984796::res://.godot/exported/133200997/export-52302b8c6fcd09573d046d8fd05a258a-hit_box.scn
+res://prefabs/kill_zone.tscn::0be1f85b6b7adb8a4d34c2e74e30725d::1714984796::res://.godot/exported/133200997/export-698427f6ceb950726e51505fb1163b29-kill_zone.scn
+res://prefabs/moving_plataform.tscn::0f23b3fcba1179fe84ef5ddafd22127a::1714960330::res://.godot/exported/133200997/export-b04a4c0fdd378ae0eaf3206cdcf36ebb-moving_plataform.scn
+res://prefabs/pause_menu.tscn::a36b57861125d27ef567be1e9924fde9::1714960330::res://.godot/exported/133200997/export-c43a75ce232219e652145b532a63709b-pause_menu.scn
+res://prefabs/portal.tscn::c316c3fa0397263b76707245ff9c31b8::1714984796::res://.godot/exported/133200997/export-5cb7a1ecc1770e0d2e788bffc1f04e6e-portal.scn
+res://pause_menu.tres::4c64d98f63de32cec2bdab9860c46e37::1714960330::res://.godot/exported/133200997/export-f70ff4f5f0b884056c6739f7652c7518-pause_menu.res

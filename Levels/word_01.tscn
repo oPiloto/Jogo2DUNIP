@@ -828,7 +828,7 @@ grow_vertical = 2
 script = ExtResource("37_1d0ro")
 
 [node name="Portal" parent="." instance=ExtResource("35_g4xly")]
-position = Vector2(100, 271)
+position = Vector2(14, 274)
 next_level = "res://Levels/word_03.tscn"
 
 [connection signal="timeout" from="HUD/Control/ClockTimer" to="HUD/Control" method="_on_clock_timer_timeout"]
