@@ -830,7 +830,7 @@ script = ExtResource("37_1d0ro")
 
 [node name="Portal" parent="." instance=ExtResource("35_g4xly")]
 position = Vector2(14, 274)
-next_level = "res://Levels/word_03.tscn"
+next_level = "res://Levels/word_02.tscn"
 
 [node name="background_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("39_psdm7")
