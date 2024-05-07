@@ -12,6 +12,8 @@ var knockback_vector = Vector2.ZERO
 var knockback_power = 15
 var direction
 
+@onready var jump_sound = $jump_sound
+@onready var knockback_sound = $knockback_sound
 @onready var collision_shape_2d = $CollisionShape2D
 @onready var animation := $anim as AnimatedSprite2D # Vamos guardar uma referência para o nó de animação
 @onready var remote_transform_2d = $RemoteTransform2D
@@ -29,7 +31,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_FORCE
 		is_jumping = true
-		
+		jump_sound.play()
+
 	elif is_on_floor():
 		is_jumping = false
 
@@ -63,6 +66,8 @@ func follow_camera(camera):
 	remote_transform_2d.remote_path = camera.get_path()
 
 func take_damage(knockback_force := Vector2.ZERO, duration := 0.25):
+	knockback_sound.play()
+	
 	if Globals.player_life > 0:
 		Globals.player_life -= 1
 	else:

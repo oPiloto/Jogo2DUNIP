@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dsticdoq2xjol"]
+[gd_scene load_steps=14 format=3 uid="uid://dsticdoq2xjol"]
 
 [ext_resource type="Texture2D" uid="uid://c6uufud86s5y6" path="res://Assets/Sprite Pack 2/4 - Robo Pumpkin/Walking (16 x 16).png" id="1_am5a3"]
 [ext_resource type="Script" path="res://Scripts/ground_enemy.gd" id="1_f2gac"]
 [ext_resource type="Texture2D" uid="uid://bu71fmsxgbejg" path="res://Assets/Sprite Pack 2/4 - Robo Pumpkin/Hurt (16 x 16).png" id="2_0ptvn"]
 [ext_resource type="Texture2D" uid="uid://caku0fsofrbty" path="res://Assets/Sprite Pack 2/4 - Robo Pumpkin/Standing (16 x 16).png" id="3_dbxcp"]
 [ext_resource type="PackedScene" uid="uid://kk1756ff1pjw" path="res://prefabs/hit_box.tscn" id="5_8q20s"]
+[ext_resource type="AudioStream" uid="uid://dy6nhowrgjc20" path="res://Sounds/170149__timgormly__8-bit-hurt.wav" id="6_0cjag"]
 
 [sub_resource type="Animation" id="Animation_f7tos"]
 length = 0.001
@@ -214,5 +215,9 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_box"]
 position = Vector2(0, -10.5)
 shape = SubResource("RectangleShape2D_dbkyc")
+
+[node name="death_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_0cjag")
+volume_db = -10.0
 
 [connection signal="body_entered" from="hit_box" to="." method="_on_hit_box_body_entered"]

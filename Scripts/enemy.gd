@@ -7,6 +7,7 @@ const JUMP_VELOCITY = -400.0
 var wall_detector
 var texture
 @onready var animation = $animation
+@onready var death_sound = $death_sound
 @export var enemy_socre = 20
 
 var direction := -1
