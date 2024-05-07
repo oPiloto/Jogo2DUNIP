@@ -1,3 +1,5 @@
-res://Levels/word_02.tscn
-res://Shaders/mudar_mundo.gdshader
 res://Levels/word_01.tscn
+res://Shaders/mudar_mundo.gdshader
+res://Levels/word_02.tscn
+res://prefabs/dialog_box.tscn
+res://Scripts/warning_sign.gd
